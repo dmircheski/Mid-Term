@@ -9,48 +9,70 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(253, 186, 33)">
         <a class="navbar-brand" href="/index.html">
-          <img src="/picutres/lakers-logo-40408.png" width="120" height="60" class="d-inline-block align-top" alt="">
-          <a class="nav-item nav-link" href="/index.html">Home</a>
-          <a class="nav-item nav-link" href="/calculator.html">Calculator</a>
+            <img src="./picutres/lakers-logo-40408.png" width="120" height="60" class="d-inline-block align-top" alt="">
+            <a class="nav-item nav-link" href="/index.html">Home</a>
+            <a class="nav-item nav-link" href="/calculator.html">Calculator</a>
         </a>
-      </nav>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div>
+                    <h1> Sum two numbers </h1>
+                </div>
+                <div>
+                    <label> Number 1</label> <br>
+                    <input id="n1" type="text">
+                </div>
 
-      <div> 
-          <h1> Sum two numbers </h1>
-      </div>
-      <div>
-          <label> Number 1</label> <br>
-          <input id="n1" type="text">
-      </div>
+                <div>
+                    <label> Number 2</label> <br>
+                    <input id="n2" type="text">
+                </div>
+                <br>
 
-      <div>
-        <label> Number 2</label> <br>
-        <input id="n2" type="text">
+                <label> Do you agree motherfucker ? </label>
+                <input type="checkbox" id="agreeCheckbox">
+
+                <br>
+
+                <input class="btn btn-primary" type="submit" value="Submit" onclick="calculate()">
+
+
+            </div>
+        </div>
     </div>
-    <br>
-    
-    <label> Do you agree motherfucker ? </label>
-    <input type="checkbox">
-
-    <br>
-
-    <input class="btn btn-primary" type="submit" value="Submit">
-
-
     <script>
         let num1 = document.getElementById('n1');
         let num2 = document.getElementById('n2');
-        let result = num1 + num2;
-        
-        console.log(num1+num2);
-        localStorage.setItem("Result", result);
+        let checkbox = document.getElementById("agreeCheckbox");
+
+        calculate = () => {
+            if (areBothInputsPopulated()) {
+                if (checkbox.checked) {
+                    let result = Number(num1.value) + Number(num2.value);
+                    localStorage.setItem("Result", result);
+                    console.log(result);
+                } else {
+                    alert("You need to check the box");
+                }
+            } else {
+                alert("You must populate both fields");
+            }
+
+        }
+
+        areBothInputsPopulated = () => {
+            return num1.value.length && num2.value.length
+        }
+
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
