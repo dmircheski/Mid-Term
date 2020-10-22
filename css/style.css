@@ -1,0 +1,19 @@
+.content{
+    margin-left: 150px;
+}
+
+.nav-item:hover {
+    columns: #000000 !important;
+    text-decoration: none;
+    background-color: rgb(85, 37, 130);
+}
+
+a {
+    color:#000000 !important;
+    text-decoration:none;
+
+}
+
+input {
+    margin-left: 30px;
+}
