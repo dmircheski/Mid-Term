@@ -25,8 +25,7 @@ function checkField2() {
 }
 
 function calculate() {
-    if (checkField1() && checkField2() == true) {
-        if (checkbox.checked) {
+    if (checkField1() && checkField2() && checkbox == true) {
             let result = Number(num1.value) + Number(num2.value);
             localStorage.setItem("Result", result);
             console.log(result);
@@ -35,5 +34,5 @@ function calculate() {
         }
     } 
 
-}
+
 
