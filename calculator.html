@@ -47,8 +47,10 @@
     <script>
         let num1 = document.getElementById('n1');
         let num2 = document.getElementById('n2');
+        let result = num1 + num2;
         
         console.log(num1+num2);
+        localStorage.setItem("Result", result);
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
